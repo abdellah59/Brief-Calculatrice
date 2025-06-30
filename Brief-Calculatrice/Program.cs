@@ -5,18 +5,47 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("---------- Calculatrice ----------");
-
-            int nbr1 = 0;
-            int nbr2 = 0;
+            double nbr1 = 0;
+            double nbr2 = 0;
             double resultat = 0;
 
-            Console.Write("Saisisez un nombre : ");
-            nbr1 = Convert.ToInt32(Console.ReadLine());
+            double Additionner(double nbr1, double nbr2)
+            {
+                double resultat = nbr1 + nbr2;
+                return resultat;
+
+            }
+
+            double Soustraire(double nbr1, double nbr2)
+            {
+                double resultat = nbr1 - nbr2;
+                return resultat;
+
+            }
+
+
+            double Multiplier(double nbr1, double nbr2)
+            {
+                double resultat = nbr1 * nbr2;
+                return resultat;
+
+            }
+
+
+            double Diviser(double nbr1, double nbr2)
+            {
+                double resultat = nbr1 / nbr2;
+                return resultat;
+
+            }
+
+            Console.WriteLine("---------- Calculatrice ----------");
 
             Console.Write("Saisisez un nombre : ");
-            nbr2 = Convert.ToInt32(Console.ReadLine());
-            
+            nbr1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Saisisez un nombre : ");
+            nbr2 = double.Parse(Console.ReadLine());
 
             Console.WriteLine("Choix des options de la calculatrice");
             Console.WriteLine("+ : Addition");
@@ -31,22 +60,23 @@
             {
                 case "+":
                     Console.Clear();
-                    Console.WriteLine($"Resultat : {nbr1} + {nbr2} = " + (nbr1 + nbr2));
+                   
+                    Console.WriteLine($"Resultat : {nbr1} + {nbr2} = " + Additionner(nbr1,nbr2));
                     break;
 
                 case "-":
                     Console.Clear();
-                    Console.WriteLine($"Resultat : {nbr1} + {nbr2} = " + (nbr1 - nbr2));
+                    Console.WriteLine($"Resultat : {nbr1} + {nbr2} = " + Soustraire(nbr1, nbr2));
                     break;
 
                 case "*":
                     Console.Clear();
-                    Console.WriteLine($"Resultat : {nbr1} + {nbr2} = " + (nbr1 * nbr2));
+                    Console.WriteLine($"Resultat : {nbr1} * {nbr2} = " + Multiplier(nbr1, nbr2));
                     break;
 
                 case "/":
                     Console.Clear();
-                    Console.WriteLine($"Resultat : {nbr1} + {nbr2} = " + (nbr1 / nbr2));
+                    Console.WriteLine($"Resultat : {nbr1} / {nbr2} = " + Diviser(nbr1, nbr2));
                     break;
 
                 case "esc":
