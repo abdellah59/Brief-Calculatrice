@@ -62,9 +62,9 @@
                 Console.Write("Option choisie : ");
 
 
-                 
-                 // switch loop which allows arithmetic operations to be performed depending on the choice of operator
-                
+
+                // switch loop which allows arithmetic operations to be performed depending on the choice of operator
+
 
                 switch (Console.ReadLine())
                 {
@@ -87,8 +87,9 @@
                     case "/":
                         while (nbr2 == 0)
                         {
-                            
-                            Console.WriteLine("Erreur !! saisissez un nombre autre que 0 : ");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("Erreur !! saisissez un nombre autre que 0 : ");
+                            Console.ResetColor();
                             double.TryParse(Console.ReadLine(), out nbr2);
 
                         }
@@ -105,13 +106,13 @@
 
                     default:
                         Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Choix invalide ! Veuillez saisir +, -, *, / ou esc.");
+                        Console.ResetColor();
                         break;
-
 
                 }
 
-                Console.ReadLine();
                 Console.Write("Vous voulez faire d'autres operations (y/n) : ");
                 string reponse = Console.ReadLine();
 
